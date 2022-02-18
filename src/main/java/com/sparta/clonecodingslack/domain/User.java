@@ -1,11 +1,13 @@
 package com.sparta.clonecodingslack.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -22,4 +24,10 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    public User(String username, String nickname, String password) {
+        this.username = username;
+        this.nickname = nickname;
+        this.password = password;
+    }
 }
